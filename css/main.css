@@ -1,0 +1,94 @@
+body {
+    background-image: url("../img/background-tile-beige.jpg");
+    background-repeat: repeat;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading-div {
+    padding-top: 19px;
+}
+
+.tarumian {
+    font-family: "ArTarumianBarak";
+    color: #435680;
+    font-weight: bold;
+}
+
+.gallery-text {
+    font-size: 36px;
+    letter-spacing: 10;
+    margin-top: -12px;
+    margin-bottom: -2px;
+}
+
+.heading-text {
+    text-transform: uppercase;
+    letter-spacing: 7;
+    font-size: 36px;
+}
+
+.beige-box {
+    background-color: #FAF9F4;
+    height: 13px;
+    width: 97%;
+}
+
+.language-select {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.language-select>a {
+    text-decoration: none;
+}
+
+.language {
+    margin: 0 10px;
+}
+
+.language-image {
+    width: 20px;
+    height: 20px;
+    border-radius: 12px;
+    vertical-align: middle;
+}
+
+.language-text {
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.smaller-margins {
+    margin-top: 7px;
+}
+
+.center-div {
+    text-align: center;
+    align-items: center;
+}
+
+body>div {
+    margin-top: 16px;
+}
+
+@media only screen and (max-width: 1023px) {
+    .heading-text {
+        font-size: 32px;
+    }
+    .center-div>img {
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .heading-text {
+        font-size: 26px;
+    }
+}

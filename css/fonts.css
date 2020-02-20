@@ -1,0 +1,6 @@
+@font-face {
+    font-family: "ArTarumianBarak";
+    src: url("../fonts/BARAK.woff") format("woff"), url("../fonts/BARAK.ttf") format("truetype"), url("../fonts/BARAK.svg#BernhardFashionBT-Regular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
