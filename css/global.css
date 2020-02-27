@@ -1,0 +1,70 @@
+html {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+body {
+    background-image: url('../img/background-tile-beige.jpg');
+    background-repeat: repeat;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-left {
+    margin-right: 50px;
+}
+
+.header-box-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 20px;
+    padding-right: 10px;
+}
+
+.header-page,
+.header-name {
+    font-family: 'ArTarumianBarak';
+}
+
+.header-name {
+    text-transform: uppercase;
+    font-size: 22px;
+    letter-spacing: 6px;
+}
+
+.header-page {
+    text-transform: capitalize;
+    font-size: 24px;
+}
+
+.button-text {
+    font-family: 'ArTarumianBarak';
+    font-size: 24px;
+    text-transform: capitalize;
+}
+
+.button-img {
+    height: 20px;
+    width: 20px;
+}
+
+.page-nav {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.page-nav>a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: inherit;
+}

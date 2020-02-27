@@ -1,0 +1,30 @@
+.tarumian {
+    font-family: "ArTarumianBarak";
+    color: #435680;
+    font-weight: bold;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+}
+
+.image-container {
+    margin-right: 50px;
+}
+
+.personal-information {
+    font-size: 18px;
+    color: #000066;
+    font-family: Verdana, Arial, Helvetica, sans-serif
+}
+
+.name {
+    margin-top: 0;
+}
+
+.contact a {
+    text-decoration: none;
+    color: inherit;
+}
