@@ -10,6 +10,7 @@ $(function() {
         modalName.html($(this).data("name"));
         modalPlace.html($(this).data("place"));
         $("#painting-zoomed").modal('toggle');
+        $("#painting-zoomed .modal-dialog").css("max-width", "100%").width("auto").height("auto");
         $("body").css("padding-right", "0");
     })
 })

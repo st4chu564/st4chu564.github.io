@@ -2,9 +2,13 @@
     <title>Regina Lipecka - galeria autorska</title>
     <meta charste="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/fonts.css">
-    <link rel="stylesheet" href="css/realizacje.css">
+    <link rel="stylesheet" href="css/okna.css">
     <script src="scripts/main.js"></script>
 </head>
 
@@ -51,7 +55,16 @@
     </div>
     <div class="painting-container">
         <div class="painting">
-            <img class="painting" src="img/witraz-chrzest-chrystusa.jpg" data-heading="Witraż" data-title="Chrzest Chrystusa" data-place="Tychy" data-year="">
+            <img class="painting" src="img/witraz-chrzest-chrystusa.jpg" data-title="Witraż" data-name="Chrzest Chrystusa" data-place="Tychy" data-year="">
+        </div>
+    </div>
+    <div class="modal fade" id="painting-zoomed" tabindex="-1" role="dialog" aria-labelledby="Obraz" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <img class="painting-full">
+                <p class="title-line"><b class="title"></b><br><span class="name"></span></p>
+                <p class="place"></p>
+            </div>
         </div>
     </div>
 </body>

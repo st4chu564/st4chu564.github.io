@@ -27,10 +27,16 @@ div.flex-break {
     flex-basis: 100%;
 }
 
+.modal {
+    text-align: center;
+}
+
 .modal-dialog {
     background-image: url('../img/background-tile-beige.jpg');
     background-repeat: repeat;
-    max-width: 80%;
+    max-width: 100%; 
+    width: auto !important; 
+    display: inline-block; 
 }
 
 .modal-content {
@@ -49,4 +55,8 @@ div.flex-break {
 
 img.painting-full {
     object-fit: contain;
+}
+
+p.title-line {
+    margin-top: 15px;
 }
