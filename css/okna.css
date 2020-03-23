@@ -17,6 +17,7 @@ img.painting {
     height: 150px;
     border-style: solid;
     border-width: 8px;
+    object-fit: contain;
     border-image: url('../img/Ramka1.png') 5 4 4 5 repeat;
 
 }
