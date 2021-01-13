@@ -4,7 +4,6 @@ $(function() {
         let modalTitle = $("div.modal-content b.title")
         let modalName = $("div.modal-content span.name");
         let modalPlace = $("div.modal-content p.place");
-        console.log($(this).data("title"));
         modalImg.attr("src", $(this).attr("src"));
         modalTitle.html($(this).data("title"));
         modalName.html($(this).data("name"));
