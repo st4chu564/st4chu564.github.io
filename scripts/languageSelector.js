@@ -21,18 +21,41 @@ let languageSelectBoxEnd = '</div>';
 
 $(function(){
     let page = window.location.pathname;
+
     $('body').append(languageSelectBoxStart + polishButton + englishButton + frenchButton + languageSelectBoxEnd);
+
+    if(pages[page] === "index"){
+        $(".language-button").each(function() {
+            this.href = "navigation.html";
+        })
+    }
 
     $(".language-button").click(function(e, target){
         let languageSelected = $(this).data('language');
         if(sessionStorage["language"] === null){
             sessionStorage["language"] = languageSelected;
         }
-        if(pages[page] === "index"){
-            window.location.href = window.location.href + "navigation.html";
+        switch(pages[page]){
+            case "biography":             
+                ClearBiography();
+                PopulateBiography(languageSelected);
+                break;
+            case "contact": 
+                console.log("contact");
+                break;
+            case "linorites":
+                console.log("linorites");
+                break;
+            case "paintings":
+                console.log("paintings");
+                break;
+            case "realizations":
+                console.log("realizations");
+                break;
+            default:
+                console.log("unknown site");
+                break;
         }
-        // ClearBiography();
-        // PopulateBiography(languageSelected);
         return false;
     })
 });
