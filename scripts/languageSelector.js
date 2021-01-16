@@ -117,6 +117,7 @@ function ChangeBiographyLanguage(language){
 }
 
 function ChangeNavigationLanguage(site = 'navigation', language = 'polish'){
+    console.log(language);
     $(".buttons-container a span").each(function(index) {
         if(site === 'navigation'){
             $(this).html(languages.navigation[language][index]);
