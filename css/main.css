@@ -36,32 +36,6 @@ body {
     width: 97%;
 }
 
-.language-select {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.language-select>a {
-    text-decoration: none;
-}
-
-.language {
-    margin: 0 10px;
-}
-
-.language-image {
-    width: 20px;
-    height: 20px;
-    border-radius: 12px;
-    vertical-align: middle;
-}
-
-.language-text {
-    font-size: 13px;
-    text-transform: uppercase;
-}
-
 .smaller-margins {
     margin-top: 7px;
 }
