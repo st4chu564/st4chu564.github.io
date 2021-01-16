@@ -153,7 +153,7 @@ const languages = {
                     {"year": 1995, "name": "Galeria Miriam, Tychy"},
                     {"year": 1997, "name": "Galeria w LO im. Leona Kruczkowskiego, Tychy"},
                     {"year": 1999, "name": "Centrum Sztuki i Kultury Concarneau (Francja);Galeria Miriam, Tychy"},
-                    {"year": 2001, "name": "Galeria \"Forma & Colour\", Warszawa;Galeria \"Obok\", Tychy"},
+                    {"year": 2001, "name": "Galeria \"Forma & Colour\", Warszawa"},
                     {"year": 2002, "name": "Galeria \"Obok\", Tychy"},
                     {"year": 2003, "name": "Instytu Francuski, Kraków"},
                     {"year": 2004, "name": "Miejski Dom Kultury, Mikołów;Młodzieżowy Dom Kultury nr 2, Tychy;Galeria Art - Nova 1, Katowice;Galeria Miriam, Tychy"},
