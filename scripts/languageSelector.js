@@ -1,16 +1,16 @@
-let polishButton = '<a class="language-button" data-language="polish" href="#">' +
+let polishButton = '<a class="language-button" data-language="polish">' +
     '<div class="language">' +
     '<img class="language-image" src="img/poland.png" alt="Polish Flag">' +
     '<span class="tarumian language-text">polski</span>' + 
     '</div></a>';
 
-let englishButton = '<a class="language-button" data-language="english" href="#">' +
+let englishButton = '<a class="language-button" data-language="english">' +
     '<div class="language">' +
     '<img class="language-image" src="img/greatBritain.png" alt="English Flag">' +
     '<span class="tarumian language-text">english</span>' + 
     '</div></a>';
 
-let frenchButton = '<a class="language-button" data-language="french" href="#">' +
+let frenchButton = '<a class="language-button" data-language="french">' +
     '<div class="language">' +
     '<img class="language-image" src="img/france.png" alt="French Flag">' +
     '<span class="tarumian language-text">french</span>' + 
