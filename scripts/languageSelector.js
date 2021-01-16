@@ -28,8 +28,6 @@ $(function(){
         if(sessionStorage["language"] === null){
             sessionStorage["language"] = languageSelected;
         }
-        console.log(pages);
-        console.log(page);
         if(pages[page] === "index"){
             window.location.href = window.location.href.slice(0, -1) + "navigation.html";
         }
@@ -90,14 +88,14 @@ function PopulateBiography(language){
     });
 }
 
-const pages = [
-    {"/" : "index"},
-    {"/zyciorys.html": "biography"},
-    {"/kontakt.html": "contact"},
-    {"/linoryty.html": "linorites"},
-    {"/malarstwo.html": "paintings"},
-    {"/realizacje.html": "realizations"},
-]
+const pages = {
+    "/" : "index",
+    "/zyciorys.html": "biography",
+    "/kontakt.html": "contact",
+    "/linoryty.html": "linorites",
+    "/malarstwo.html": "paintings",
+    "/realizacje.html": "realizations",
+}
 
 
 const languages = {
