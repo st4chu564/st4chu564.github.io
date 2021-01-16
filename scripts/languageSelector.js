@@ -56,7 +56,6 @@ $(function(){
                 console.log("unknown site");
                 break;
         }
-        return false;
     })
 });
 
