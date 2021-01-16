@@ -31,8 +31,9 @@ $(function(){
         if(pages[page] === "index"){
             window.location.href = window.location.href + "navigation.html";
         }
-        ClearBiography();
-        PopulateBiography(languageSelected);
+        // ClearBiography();
+        // PopulateBiography(languageSelected);
+        return false;
     })
 });
 
