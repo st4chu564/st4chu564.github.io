@@ -20,12 +20,19 @@ let languageSelectBoxStart = '<div class="language-select">';
 let languageSelectBoxEnd = '</div>';
 
 $(function(){
+    let page = window.location.pathname;
     $('body').append(languageSelectBoxStart + polishButton + englishButton + frenchButton + languageSelectBoxEnd);
 
     $(".language-button").click(function(e, target){
-        let page = window.location.pathname;
-        console.log(page);
         let languageSelected = $(this).data('language');
+        if(sessionStorage["language"] === null){
+            sessionStorage["language"] = languageSelected;
+        }
+        console.log(pages);
+        console.log(page);
+        if(pages[page] === "index"){
+            window.location.href = window.location.href + "navigation.html";
+        }
         ClearBiography();
         PopulateBiography(languageSelected);
     })
@@ -82,6 +89,15 @@ function PopulateBiography(language){
         $(".list-container").append("<p class=\"other-text\"><b>" + entry.bold + "</b> " + entry.rest + "</p>");
     });
 }
+
+const pages = [
+    {"/" : "index"},
+    {"/zyciorys.html": "biography"},
+    {"/kontakt.html": "contact"},
+    {"/linoryty.html": "linorites"},
+    {"/malarstwo.html": "paintings"},
+    {"/realizacje.html": "realizations"},
+]
 
 
 const languages = {
