@@ -1,4 +1,6 @@
 .language-select {
+    position: fixed;
+    bottom: 5;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -32,13 +32,14 @@ $(function(){
 
     $(".language-button").click(function(e, target){
         let languageSelected = $(this).data('language');
-        if(sessionStorage["language"] === null){
+        if(sessionStorage.getItem("language") === null){
             sessionStorage["language"] = languageSelected;
         }
+        if(page.endsWith("#"))
+            page = page.slice(0, -1);
         switch(pages[page]){
-            case "biography":             
-                ClearBiography();
-                PopulateBiography(languageSelected);
+            case "biography":
+                ChangeBiographyLanguage(languageSelected);
                 break;
             case "contact": 
                 console.log("contact");
@@ -47,10 +48,13 @@ $(function(){
                 console.log("linorites");
                 break;
             case "paintings":
-                console.log("paintings");
+                ChangeNavigationLanguage(pages[page], languageSelected);
                 break;
             case "realizations":
                 console.log("realizations");
+                break;
+            case "navigation": 
+                ChangeNavigationLanguage(pages[page], languageSelected);
                 break;
             default:
                 console.log("unknown site");
@@ -75,7 +79,8 @@ function ClearBiography(){
     }
 }
 
-function PopulateBiography(language){
+function ChangeBiographyLanguage(language){
+    ClearBiography();
     let languageVersion = languages.biography[language];
     $(".life-story").html(languageVersion.lifeStory);
     $($(".list-header")[0]).html(languageVersion.details.header);
@@ -111,6 +116,21 @@ function PopulateBiography(language){
     });
 }
 
+function ChangeNavigationLanguage(site = 'navigation', language = 'polish'){
+    $(".buttons-container a span").each(function(index) {
+        if(site === 'navigation'){
+            $(this).html(languages.navigation[language][index]);
+        }
+        else if(site === 'paintings'){
+            $(this).html(languages.paintings[language][index]);
+        }
+    })
+}
+
+function ChangePaintingsLanguage(language){
+
+}
+
 const pages = {
     "/" : "index",
     "/zyciorys.html": "biography",
@@ -118,13 +138,13 @@ const pages = {
     "/linoryty.html": "linorites",
     "/malarstwo.html": "paintings",
     "/realizacje.html": "realizations",
+    "/navigation.html": "navigation",
 }
 
 
 const languages = {
     "biography": {
         "polish": {
-            "title": "Regina Lipecka - galeria autorska",
             "lifeStory": "Urodzona w 1968 roku. Studia na Akademii Sztuk Pięknych w Krakowie - Wydział Malarstwa - w latach 1989-94. Dyplom w pracowni prof. Włodzimierza Kunza. W 1998 r. odbyła 6-cio miesięczny staż w Instytucie Sztuki i Techniki Bretanii Zachodniej w Breście (Francja). Zajmuje się twórczością artystyczną w dziedzinie malarstwa, rysunku, linorytu, sgraffito, projektowania witraży, pisze wiersze. ",
             "details": {
                 "header": "Wystawy indywidualne",
@@ -214,7 +234,7 @@ const languages = {
                     {"year": 1994, "name": "third prize - \"Graphics of the year 1994\", Cracow (Poland)"},
                     {"year": 1995, "name": "prize in - \"Youngest Cracow Artist Confrontation\", Myślenice (Poland)"},
                     {"year": 2003, "name": "prize in \"Work of the Year 2002\", Katowice (Poland)"},
-                    {"year": 2018, "name": "first place - Tyski Bank Kultury"}
+                    {"year": 2018, "name": "first place - Tyski Bank Kultury, Tychy (Poland)"}
                 ]
             },
             "otherTexts": [
@@ -227,6 +247,101 @@ const languages = {
                     "rest": "in Poland, Germany, France, Portugal, Korea, Japan, Réunion"
                 }
             ]
+        },
+        "french": {
+            "lifeStory": 'Née en 1968. Études supérieures effectuées à la Faculté de Peinture de l`Académie des Beaux - Arts à Cracovie dans les années 1989 - 1994. Diplôme obtenu dans le domaine de la peinture de chevalets. En 1998 stage de 6 mois effectué à l`Institut d`Arts et Techniques de Bretagne Occidentale à Brest. Fait de la peinture, de la graphique, des projets de vitraux et écrit des poèmes.',
+            "details": {
+                "header": "Expositions individuelles",
+                "list": [
+                    {"year": 1994, "name": 'Théâtre "Stygmator", Cracovie (Pologne)'},
+                    {"year": 1995, "name": 'Galerie Miriam, Tychy (Pologne)'},
+                    {"year": 1997, "name": 'Galerie au Lycée Kruczkowski,Tychy (Pologne)'},
+                    {"year": 1999, "name": 'Centre des Arts et de la Culture, Concarneau (France);Galerie Miriam, Tychy (Pologne)'},
+                    {"year": 2001, "name": 'Galerie " Forma & Coulour ", Varsovie (Pologne)'},
+                    {"year": 2002, "name": 'Galerie "Obok", Tychy (Pologne)'},
+                    {"year": 2003, "name": 'Institut Français, Cracovie (Pologne)'},
+                    {"year": 2004, "name": 'Maison Municipal de la Culture, Mikołów (Pologne);Maison de la Culture No 2, Tychy (Pologne);Galerie "Art – Nova 1", Katowice (Pologne);Galerie  Miriam, Tychy (Pologne)'},
+                    {"year": 2005, "name": 'Galerie Katowice, Katowice (Pologne)'},
+                    {"year": 2006, "name": 'Galerie Strefart, Tychy (Pologne)'},
+                    {"year": 2007, "name": 'Galerie „Sous le Toit”, Tychy (Pologne)'},
+                    {"year": 2008, "name": 'Galerie Pryzmat, Cracovie (Pologne)'},
+                    {"year": 2010, "name": 'Ferme des Artisans, Brasparts (France);La Fausse ô Makaks, Brest (France);Maison de la Bretagne, Poznań (Pologne)'},
+                    {"year": 2011, "name": 'Galerie au Lycée Kruczkowski, Tychy (Pologne;Espace du Roudour, Saint-Martin-des-Champs (France)'},
+                    {"year": 2014, "name": 'Galerie Rękawka, Cracovie (Pologne)'},
+                    {"year": 2016, "name": '"La Cantina", Tychy (Pologne)'},
+                    {"year": 2019, "name": 'MCK,Tychy (Pologne)'},
+                    {"year": 2020, "name": 'CKW StrefArt, Tychy (Pologne)'}
+                ]
+            },
+            "realizations": {
+                "header": "Autres réalisations artistiques",
+                "list": [
+                    {"year": 1994, "name": 'Édition du livre poétique "Cerfs-volants" (Pologne);Projet du vitrail "Le baptême de Jésus Christ ", Église Saint Jean de Baptême, Tychy (Pologne)'},
+                    {"year": 1996, "name": 'Sgrafiito "Chemin de Croix", Église Saint Jean de Baptême, Tychy (Pologne)'}
+                ]
+            },
+            "awards": {
+                "header": "Prix",
+                "list": [
+                    {"year": 1994, "name": 'III Prix reçu au Concours "Graphique Année 1994",Cracovie (Pologne)'},
+                    {"year": 1996, "name": 'Prix spécial reçu à l\'occasion de la "Confrontation des Jeunes Artistes de Cracovie", Myślenice (Pologne)'},
+                    {"year": 2003, "name": 'Prix reçu au Concours "Oeuvre d`Art Année 2002", Katowice (Pologne)'},
+                    {"year": 2018, "name": 'Tyski Bank Kultury, Tychy (Pologne)'}
+                ]
+            },
+            "otherTexts": [
+                {
+                    "bold": "La participation aux plusieurs d`exposition collectives", 
+                    "rest": "Cracovie, Varsovie, Łódź, Olsztyn, Legnica, Katowice, Tychy (Pologne), Tokyo (Japon), Münster (Allemagne)"
+                },
+                {
+                    "bold": "Tableaux vendus aux collectionneurs privés dans les différents pays",
+                    "rest": "Pologne, Autriche, Allemagne, France, Japon, Portugal, Corée du Sud, Réunion"
+                }
+            ]
         }
-    }  
+    },
+    "navigation": {
+        "polish": [
+            "malarstwo",
+            "linoryty",
+            "życiory",
+            "realizacje",
+            "kontakt"
+        ],
+        "english": [
+            "painting",
+            "prints",
+            "Biography",
+            "Realizations",
+            "Contact"
+        ],
+        "french": [
+            "La peinture",
+            "Les gravures sur linoléum",
+            "La biographie",
+            "Les réalisations",
+            "Le contact"
+        ]
+    },
+    "paintings": {
+        "polish": [
+            "Okna",
+            "Reminescencje z Bretanii",
+            "Okna 2",
+            "Reminescencje z Bretanii 2"
+        ],
+        "english": [
+            "The windows",
+            "The reminiscences from Brittany",
+            "The windows 2",
+            "The reminiscences from Brittany 2"
+        ],
+        "french": [
+            "Les fênetres",
+            "Les reminiscences de la Bretagne",
+            "Les fênetres 2",
+            "Les reminiscences de la Bretagne 2"
+        ]
+    }
 };
