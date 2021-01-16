@@ -29,7 +29,7 @@ $(function(){
             sessionStorage["language"] = languageSelected;
         }
         if(pages[page] === "index"){
-            window.location.href = window.location.href.slice(0, -1) + "navigation.html";
+            window.location.href = window.location.href + "navigation.html";
         }
         ClearBiography();
         PopulateBiography(languageSelected);
