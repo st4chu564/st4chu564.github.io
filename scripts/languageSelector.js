@@ -26,7 +26,7 @@ $(function(){
 
     if(pages[page] === "index"){
         $(".language-button").each(function() {
-            this.href = "navigation.html";
+            this.setAttribute('href', '/navigation.html');
         })
     }
 
