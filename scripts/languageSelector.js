@@ -1,16 +1,16 @@
-let polishButton = '<a class="language-button" data-language="polish">' +
+let polishButton = '<a class="language-button" data-language="polish" href="#">' +
     '<div class="language">' +
     '<img class="language-image" src="img/poland.png" alt="Polish Flag">' +
     '<span class="tarumian language-text">polski</span>' + 
     '</div></a>';
 
-let englishButton = '<a class="language-button" data-language="english">' +
+let englishButton = '<a class="language-button" data-language="english" href="#">' +
     '<div class="language">' +
     '<img class="language-image" src="img/greatBritain.png" alt="English Flag">' +
     '<span class="tarumian language-text">english</span>' + 
     '</div></a>';
 
-let frenchButton = '<a class="language-button" data-language="french">' +
+let frenchButton = '<a class="language-button" data-language="french" href="#">' +
     '<div class="language">' +
     '<img class="language-image" src="img/france.png" alt="French Flag">' +
     '<span class="tarumian language-text">french</span>' + 
@@ -31,7 +31,7 @@ $(function(){
         console.log(pages);
         console.log(page);
         if(pages[page] === "index"){
-            window.location.href = window.location.href + "navigation.html";
+            window.location.href = window.location.href.slice(0, -1) + "navigation.html";
         }
         ClearBiography();
         PopulateBiography(languageSelected);
