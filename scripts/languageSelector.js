@@ -48,13 +48,13 @@ $(function(){
                 console.log("linorites");
                 break;
             case "paintings":
-                ChangeNavigationLanguage(pages[page], languageSelected);
+                ChangeNavigationLanguage(languageSelected, pages[page]);
                 break;
             case "realizations":
                 console.log("realizations");
                 break;
             case "navigation": 
-                ChangeNavigationLanguage(pages[page], languageSelected);
+                ChangeNavigationLanguage(languageSelected, pages[page]);
                 break;
             default:
                 console.log("unknown site");
@@ -116,8 +116,10 @@ function ChangeBiographyLanguage(language){
     });
 }
 
-function ChangeNavigationLanguage(site = 'navigation', language = 'polish'){
+function ChangeNavigationLanguage(language, site){
     console.log(language);
+    if(language === null)
+        language = 'polish';
     $(".buttons-container a span").each(function(index) {
         if(site === 'navigation'){
             $(this).html(languages.navigation[language][index]);
@@ -126,10 +128,6 @@ function ChangeNavigationLanguage(site = 'navigation', language = 'polish'){
             $(this).html(languages.paintings[language][index]);
         }
     })
-}
-
-function ChangePaintingsLanguage(language){
-
 }
 
 const pages = {
