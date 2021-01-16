@@ -32,9 +32,7 @@ $(function(){
 
     $(".language-button").click(function(e, target){
         let languageSelected = $(this).data('language');
-        if(sessionStorage.getItem("language") === null){
-            sessionStorage["language"] = languageSelected;
-        }
+        sessionStorage["language"] = languageSelected;
         if(page.endsWith("#"))
             page = page.slice(0, -1);
         switch(pages[page]){
