@@ -78,6 +78,9 @@ function ClearBiography(){
 }
 
 function ChangeBiographyLanguage(language){
+    if(language === null){
+        language = 'polish';
+    }
     ClearBiography();
     let languageVersion = languages.biography[language];
     $(".life-story").html(languageVersion.lifeStory);
